@@ -1,0 +1,157 @@
+═══════════════════════════════════════════════════════════════════════════
+  PPSSPP XBOX 360 - CHECKLIST DE INSTALAÇÃO E VERIFICAÇÃO
+═══════════════════════════════════════════════════════════════════════════
+
+PRÉ-REQUISITOS:
+───────────────
+☐ Xbox 360 com RGH ou JTAG instalado
+☐ Acesso FTP ao Xbox 360 (FileZilla, WinSCP, etc.)
+☐ ISO de jogo PSP (formato .iso ou .cso)
+☐ Espaço livre no HD do Xbox 360 (mínimo 500 MB)
+
+INSTALAÇÃO PASSO A PASSO:
+──────────────────────────
+☐ 1. Extrair o arquivo PPSSPP-X360-Otimizado-30FPS.zip no PC
+
+☐ 2. Conectar ao Xbox 360 via FTP
+
+☐ 3. Criar pasta no Xbox 360 (ex: Hdd1:\PPSSPP\)
+
+☐ 4. Transferir TODO o conteúdo extraído para a pasta criada
+
+☐ 5. Copiar o arquivo ppsspp.ini para game:\
+      (Caminho completo: game:\ppsspp.ini)
+
+☐ 6. Copiar sua ISO do PSP para game:\psp.iso
+      (Caminho completo: game:\psp.iso)
+      IMPORTANTE: O arquivo DEVE se chamar "psp.iso"
+
+☐ 7. Verificar se a pasta flash0 está presente em game:\flash0\
+      (Esta pasta contém arquivos do sistema PSP)
+
+☐ 8. Criar pasta memstick em game:\memstick\
+      (Para saves e dados do jogo)
+
+ESTRUTURA DE PASTAS ESPERADA:
+──────────────────────────────
+game:\
+├── ppsspp.ini          ← Configurações otimizadas
+├── psp.iso             ← Seu jogo PSP
+├── flash0\             ← Arquivos do sistema PSP
+│   └── (arquivos do sistema)
+└── memstick\           ← Saves e dados
+    └── PSP\
+        ├── SAVEDATA\
+        └── GAME\
+
+PRIMEIRA EXECUÇÃO:
+──────────────────
+☐ 1. Executar o arquivo PPSSPP.xex no Xbox 360
+
+☐ 2. Aguardar carregamento (pode demorar 10-30 segundos)
+
+☐ 3. Verificar se o jogo inicia automaticamente
+
+☐ 4. Pressionar BACK no controle para ver FPS counter
+      (Deve mostrar próximo de 30 FPS)
+
+VERIFICAÇÃO DE PERFORMANCE:
+───────────────────────────
+☐ FPS está entre 28-30? (Ótimo)
+☐ FPS está entre 25-28? (Aceitável, mas pode melhorar)
+☐ FPS está abaixo de 25? (Ver seção TROUBLESHOOTING)
+
+☐ Áudio está funcionando sem cortes?
+☐ Áudio está sincronizado com o vídeo?
+☐ Controles respondem corretamente?
+
+MAPEAMENTO DE CONTROLES XBOX 360:
+──────────────────────────────────
+A       → PSP Cross (X)
+B       → PSP Circle (O)
+X       → PSP Square (□)
+Y       → PSP Triangle (△)
+D-Pad   → PSP D-Pad
+LB      → PSP L Trigger
+RB      → PSP R Trigger
+Start   → PSP Start
+Back    → PSP Select
+Stick L → PSP Analog
+
+TROUBLESHOOTING:
+────────────────
+PROBLEMA: Jogo não inicia
+☐ Verificar se psp.iso está em game:\psp.iso
+☐ Verificar se a ISO não está corrompida
+☐ Tentar renomear a ISO para exatamente "psp.iso"
+☐ Verificar se flash0 está presente
+
+PROBLEMA: FPS muito baixo (abaixo de 25)
+☐ Editar ppsspp.ini: CPUSpeed = 111
+☐ Editar ppsspp.ini: FrameSkip = 1
+☐ Editar ppsspp.ini: bSoftwareSkinning = False
+☐ Tentar outro jogo menos exigente
+
+PROBLEMA: Áudio com cortes ou falhas
+☐ Editar ppsspp.ini: bLowLatencyAudio = False
+☐ Verificar se não há outros processos rodando no Xbox
+☐ Reiniciar o Xbox 360 e tentar novamente
+
+PROBLEMA: Gráficos com falhas ou artefatos
+☐ Editar ppsspp.ini: iRenderingMode = 0
+☐ Editar ppsspp.ini: bTrueColor = True
+☐ Editar ppsspp.ini: bVertexCache = False
+
+PROBLEMA: Controles não respondem
+☐ Verificar se o controle está conectado antes de iniciar
+☐ Tentar outro controle
+☐ Verificar arquivo controls.ini
+
+JOGOS RECOMENDADOS PARA TESTAR:
+────────────────────────────────
+✓ LEVES (devem rodar a 30 FPS constantes):
+  - Wipeout Pure
+  - Lumines
+  - Ridge Racer
+  - Tekken: Dark Resurrection
+
+✓ MÉDIOS (devem rodar a 28-30 FPS):
+  - God of War: Chains of Olympus
+  - Final Fantasy VII: Crisis Core
+  - Gran Turismo PSP
+  - Burnout Legends
+
+✓ PESADOS (podem precisar de ajustes):
+  - Monster Hunter Freedom Unite
+  - God of War: Ghost of Sparta
+  - Tekken 6
+  - Assassin's Creed: Bloodlines
+
+AJUSTES FINOS (OPCIONAL):
+──────────────────────────
+Para jogos MUITO LEVES (já rodando a 30 FPS constantes):
+☐ Pode tentar bTrueColor = True (melhor qualidade visual)
+☐ Pode tentar iAnisotropyLevel = 1 (melhor filtragem)
+
+Para jogos MUITO PESADOS (abaixo de 25 FPS):
+☐ Tentar CPUSpeed = 111 (mais lento mas mais estável)
+☐ Ativar FrameSkip = 1 ou 2
+☐ Desativar bSoftwareSkinning = False
+☐ Tentar iRenderingMode = 0 (Non-Buffered)
+
+ARQUIVOS DE DOCUMENTAÇÃO:
+──────────────────────────
+☐ LEIA-ME.txt              → Guia rápido
+☐ OTIMIZACOES.md           → Documentação técnica completa
+☐ RESUMO_OTIMIZACOES.md    → Resumo executivo das mudanças
+☐ CHECKLIST_INSTALACAO.txt → Este arquivo
+
+SUPORTE E INFORMAÇÕES:
+──────────────────────
+PPSSPP Original: https://www.ppsspp.org/
+GitHub: https://github.com/hrydgard/ppsspp
+Fórum Xbox 360: https://www.realmodscene.com/
+
+═══════════════════════════════════════════════════════════════════════════
+Versão: 0.9.6 Otimizada para 30 FPS | Janeiro 2026 | Xbox 360 (RGH/JTAG)
+═══════════════════════════════════════════════════════════════════════════

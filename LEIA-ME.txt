@@ -1,0 +1,56 @@
+================================================================================
+  PPSSPP XBOX 360 - VERSÃO OTIMIZADA PARA 30 FPS
+================================================================================
+
+INSTALAÇÃO RÁPIDA:
+------------------
+1. Copie toda a pasta para o Xbox 360 (RGH/JTAG)
+2. Coloque o arquivo ppsspp.ini em game:\
+3. Coloque sua ISO do PSP como game:\psp.iso
+4. Execute o emulador
+
+OTIMIZAÇÕES APLICADAS:
+----------------------
+✓ FPS limitado a 30 (mais estável que 60)
+✓ CPU configurada para 222 MHz (velocidade nativa PSP)
+✓ Gráficos otimizados (resolução nativa, sem filtros pesados)
+✓ Áudio funcional com qualidade decente
+✓ Vertex Cache ativado
+✓ Buffered Rendering para melhor compatibilidade
+✓ 2 threads de trabalho (otimizado para Xbox 360)
+
+RESULTADO ESPERADO:
+-------------------
+→ Jogos rodam a 30 FPS CONSTANTES sem travamentos
+→ Som funcional e sincronizado
+→ Gráficos decentes (resolução nativa PSP)
+→ Jogabilidade fluida
+
+JOGOS TESTADOS:
+---------------
+- God of War: Chains of Olympus
+- Monster Hunter Freedom Unite
+- Tekken 6
+- Final Fantasy VII: Crisis Core
+- Wipeout Pure
+
+SE AINDA TRAVAR:
+----------------
+Edite o arquivo ppsspp.ini:
+- Mude CPUSpeed = 111 (mais lento mas mais estável)
+- Ative FrameSkip = 1 (pula alguns frames)
+- Desative SoftwareSkinning = False
+
+ARQUIVOS IMPORTANTES:
+---------------------
+- ppsspp.ini = Configurações otimizadas
+- OTIMIZACOES.md = Documentação completa das mudanças
+- Xbox/XboxMain.cpp = Código modificado
+
+VERSÃO: 0.9.6 Otimizada
+DATA: Janeiro 2026
+PLATAFORMA: Xbox 360 (RGH/JTAG)
+
+Para mais detalhes, veja OTIMIZACOES.md
+
+================================================================================
